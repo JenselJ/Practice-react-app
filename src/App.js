@@ -1,7 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
+import React, {useState} from 'react';
 
 function App() {
+
+  const [count, setCount] = useState([]);
+  
+  const addItemToList = () => {
+    setCount([...count, 1]);
+    console.log(count);
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -15,8 +24,15 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Hello World
         </a>
+        <button onClick={addItemToList}>lalala</button>
+        <ul>
+          {count.map(item => (
+            <li>{item}</li>
+
+          ))}
+        </ul>
       </header>
     </div>
   );
